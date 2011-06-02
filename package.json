@@ -1,0 +1,23 @@
+{ "name": "halfstreamxml"
+, "version": "0.1.0"
+, "description": "converts a stream of XML to a stream of objects"
+, "keywords":
+  [ "XML"
+  , "stream"
+  , "SAX"
+  ]
+, "homepage": "http://github.com/thejh/node-halfstreamxml"
+, "author": "Jann Horn"
+, "main": "FIXME"
+, "repository":
+  { "type": "git"
+  , "url": "http://github.com/thejh/node-halfstreamxml.git"
+  }
+, "dependencies":
+  { "sax": "0.1.2"
+  }
+, "files":
+  { "package.json"
+  , "index.js"
+  }
+}
