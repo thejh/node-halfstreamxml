@@ -9,3 +9,7 @@ Compiling
 =========
 To compile the `.coffee` files to Javascript, use `cake build`. You will need
 [Coffeescript](http://coffeescript.org/) for that.
+
+Installing from NPM
+===================
+You can install this module from npm using `npm install halfstreamxml`.

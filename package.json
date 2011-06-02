@@ -17,7 +17,7 @@
   { "sax": "0.1.2"
   }
 , "files":
-  { "package.json"
+  [ "package.json"
   , "index.js"
-  }
+  ]
 }
