@@ -1,5 +1,5 @@
 { "name": "halfstreamxml"
-, "version": "0.1.0"
+, "version": "0.1.1"
 , "description": "converts a stream of XML to a stream of objects"
 , "keywords":
   [ "XML"
@@ -8,7 +8,7 @@
   ]
 , "homepage": "http://github.com/thejh/node-halfstreamxml"
 , "author": "Jann Horn"
-, "main": "FIXME"
+, "main": "index.js"
 , "repository":
   { "type": "git"
   , "url": "http://github.com/thejh/node-halfstreamxml.git"
