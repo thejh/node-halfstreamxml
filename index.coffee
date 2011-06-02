@@ -9,7 +9,6 @@ exports.createParser = (cbError, cbFinished, wantedNodes, strict) ->
   parser.onerror = cbError
   parser.onend = cbFinished
   parser.onopentag = ({name, attributes}) ->
-    console.log "  opening #{name}"
     if wantedNodes[name]? or element?
       parent = element
       element = {parent, name, attributes, children: []}

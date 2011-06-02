@@ -14,7 +14,6 @@
     parser.onopentag = function(_arg) {
       var attributes, name, parent;
       name = _arg.name, attributes = _arg.attributes;
-      console.log("  opening " + name);
       if ((wantedNodes[name] != null) || (element != null)) {
         parent = element;
         element = {
