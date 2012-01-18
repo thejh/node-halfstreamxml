@@ -11,8 +11,12 @@ exports.createParser = (cbError, cbFinished, wantedNodes, strict) ->
   parser.onopentag = ({name, attributes}) ->
     if wantedNodes[name]? or element?
       parent = element
-      element = {parent, name, attributes, children: []}
-      parent?.children.push element
+      element = {parent, name, attributes, children: {all: [], tags: [], text: []}}
+      if parent?
+        parent.children.all.push element
+        if not parent.children.tags[name]?
+          parent.children.tags[name] = new Array
+        parent.children.tags[name].push element
     if wantedNodes[name]?
       interestingStack.push name
   parser.onclosetag = (name) ->
@@ -21,5 +25,33 @@ exports.createParser = (cbError, cbFinished, wantedNodes, strict) ->
       wantedNodes[name] element
     element = element?.parent
   parser.ontext = (text) ->
-    element?.children.push text
+    element?.children.all.push  text
+    element?.children.text.push text
   parser
+
+exports.createStream = (cbError, cbFinished, wantedNodes, strict) ->
+  interestingStack = []
+  element = null
+  stream = sax.createStream strict
+  stream.on "error" , cbError
+  stream.on "end"   , cbFinished
+  stream.on "opentag",  ({name, attributes}) ->
+    if wantedNodes[name]? or element?
+      parent = element
+      element = {parent, name, attributes, children: {all: [], tags: [], text: []}}
+      if parent?
+        parent.children.all.push element
+        if not parent.children.tags[name]?
+          parent.children.tags[name] = new Array
+        parent.children.tags[name].push element
+    if wantedNodes[name]?
+      interestingStack.push name
+  stream.on "closetag",  (name) ->
+    if name is last interestingStack
+      interestingStack.pop()
+      wantedNodes[name] element
+    element = element?.parent
+  stream.on "text",  (text) ->
+    element?.children.all.push  text
+    element?.children.text.push text
+  stream
