@@ -1,5 +1,5 @@
 { "name": "halfstreamxml"
-, "version": "0.1.2-1"
+, "version": "0.2.0"
 , "description": "converts a stream of XML to a stream of objects"
 , "keywords":
   [ "XML"
@@ -14,7 +14,7 @@
   , "url": "http://github.com/thejh/node-halfstreamxml.git"
   }
 , "dependencies":
-  { "sax": "0.3.5"
+  { "sax": "*"
   }
 , "files":
   [ "package.json"
