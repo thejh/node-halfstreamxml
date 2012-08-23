@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/thejh/node-halfstreamxml.png)](http://travis-ci.org/thejh/node-halfstreamxml)
 This module converts streams of XML to streams of JS objects. Unlike other
 SAX modules, it doesn't give you every tag and text node seperately, but lets you
 specify tag names you want to filter for. When this module encounters a tag with
