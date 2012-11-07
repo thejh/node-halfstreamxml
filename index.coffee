@@ -27,6 +27,9 @@ exports.createParser = (cbError, cbFinished, wantedNodes, strict) ->
   parser.ontext = (text) ->
     element?.children.all.push  text
     element?.children.text.push text
+  parser.ontext = (cdata) ->
+    element?.children.all.push  text
+    element?.children.text.push text
   parser
 
 exports.createStream = (cbError, cbFinished, wantedNodes, strict) ->
@@ -52,6 +55,9 @@ exports.createStream = (cbError, cbFinished, wantedNodes, strict) ->
       wantedNodes[name] element
     element = element?.parent
   stream.on "text",  (text) ->
+    element?.children.all.push  text
+    element?.children.text.push text
+  stream.on "cdata",  (text) ->
     element?.children.all.push  text
     element?.children.text.push text
   stream
