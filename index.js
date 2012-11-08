@@ -55,7 +55,7 @@
       }
       return element != null ? element.children.text.push(text) : void 0;
     };
-    parser.oncdata = function(text) {
+    parser.ontext = function(cdata) {
       if (element != null) {
         element.children.all.push(text);
       }
