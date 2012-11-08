@@ -27,7 +27,7 @@ exports.createParser = (cbError, cbFinished, wantedNodes, strict) ->
   parser.ontext = (text) ->
     element?.children.all.push  text
     element?.children.text.push text
-  parser.ontext = (cdata) ->
+  parser.oncdata = (text) ->
     element?.children.all.push  text
     element?.children.text.push text
   parser
