@@ -1,5 +1,5 @@
 { "name": "halfstreamxml"
-, "version": "0.2.1"
+, "version": "0.2.0"
 , "description": "converts a stream of XML to a stream of objects"
 , "keywords":
   [ "XML"
